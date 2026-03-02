@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: image-scanner-bot
+    env: php
+    plan: free
+    buildCommand: composer install
+    startCommand: apache2-foreground
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: GOOGLE_VISION_KEY
+        sync: false
